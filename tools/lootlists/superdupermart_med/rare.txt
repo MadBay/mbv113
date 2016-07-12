@@ -1,1 +1,7 @@
 /obj/item/weapon/reagent_containers/food/snacks/kebab
+/obj/item/weapon/storage/firstaid/toxin
+/obj/item/weapon/scalpel
+/obj/item/weapon/circular_saw
+/obj/item/weapon/hemostat
+/obj/item/weapon/retractor
+/obj/item/weapon/surgical_drapes

@@ -8,21 +8,25 @@
 	var/datum/reagents/R = Storage.reagents
 	R.maximum_volume  = 500
 	..()
+
 /obj/machinery/power/port_gen/fuel/HasFuel()
 	var/datum/reagents/R = Storage.reagents
 	for(var/datum/reagent/fuel/F in R.reagent_list)
 		return 1
 	return 0
+
 /obj/machinery/power/port_gen/fuel/UseFuel()
 	var/datum/reagents/R = Storage.reagents
 	for(var/datum/reagent/fuel/F in R.reagent_list)
 		F.volume = max((F.volume-0.2),0)
 		playsound(src,'sound/machines/generator_loop.ogg',50,0,4)
 	R.update_total()
+
 /obj/machinery/power/port_gen/fuel/AltClick(mob/user)
 	var/datum/reagents/R = Storage.reagents
 	R.remove_all(500)
 	user << "You empty the generator's fuel tank"
+
 /obj/machinery/power/port_gen/fuel/examine(mob/user)
 	..()
 	var/datum/reagents/R = Storage.reagents
@@ -37,6 +41,8 @@
 		if(301 to 500)
 			S = "full"
 	user << "The fuel tank is [S]"
+	user << "It is[anchored? "":"n't"] anchored."
+
 /obj/machinery/power/port_gen/fuel/attackby(obj/item/O, mob/user, params)
 	if(istype(O,/obj/item/weapon/reagent_containers))
 		var/obj/item/weapon/reagent_containers/C = O

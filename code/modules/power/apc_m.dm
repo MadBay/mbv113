@@ -1,6 +1,6 @@
 /obj/machinery/power/apc/wasteland
 	name = "switchboard"
-	var/keyid = 1
+	var/lock_id = 1
 	req_access = 0
 
 
@@ -83,7 +83,7 @@
 			user << "The wires have been [wiresexposed ? "exposed" : "unexposed"]"
 			update_icon()
 
-	else if (istype(W, /obj/item/weapon/doorkey))			// trying to unlock the interface with an ID card
+	else if (istype(W,/obj/item/weapon/doorkey) && istype(W,/obj/item/weapon/keyring))			// trying to unlock the interface with an ID card
 		if(emagged)
 			user << "<span class='warning'>The interface is broken!</span>"
 		else if(opened)
@@ -93,8 +93,7 @@
 		else if(stat & (BROKEN|MAINT))
 			user << "<span class='warning'>Nothing happens!</span>"
 		else
-			var/obj/item/weapon/doorkey/KEY = W
-			if(KEY.id == keyid)
+			if(checkkey(lock_id,W))
 				locked = !locked
 				user << "<span class='notice'>You [ locked ? "lock" : "unlock"] the switchboard interface.</span>"
 				update_icon()

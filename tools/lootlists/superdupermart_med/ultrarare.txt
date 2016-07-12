@@ -1,1 +1,3 @@
 /obj/item/weapon/reagent_containers/food/drinks/bottle/vodka
+/obj/item/clothing/gloves/color/latex/nitrile
+/obj/item/weapon/storage/box/hug/medical

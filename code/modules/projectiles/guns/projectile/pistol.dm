@@ -29,6 +29,7 @@
 	desc = "Self-loading pistol Colt 6520 10mm. After each shot, the weapon recharges long until the end of the store."
 	icon = 'icons/obj/guns/10mm.png'
 	w_class = 3
+	item_state = "n99"
 	force = 13
 	origin_tech = "combat=2;materials=2"
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv

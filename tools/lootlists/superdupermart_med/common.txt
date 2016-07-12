@@ -1,1 +1,2 @@
 /obj/item/stack/medical/gauze/improvised
+/obj/item/weapon/storage/firstaid

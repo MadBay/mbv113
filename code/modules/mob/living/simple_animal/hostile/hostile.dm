@@ -12,7 +12,7 @@
 	var/list/friends = list()
 	var/list/emote_taunt = list()
 	var/taunt_chance = 0
-
+	var/ammo = 70
 	var/ranged_message = "fires" //Fluff text for ranged mobs
 	var/ranged_cooldown = 0 //What the starting cooldown is on ranged attacks
 	var/ranged_cooldown_cap = 3 //What ranged attacks, after being used are set to, to go back on cooldown, defaults to 3 life() ticks
@@ -163,7 +163,8 @@
 		var/target_distance = get_dist(src,target)
 		if(ranged)//We ranged? Shoot at em
 			if(target_distance >= 2 && ranged_cooldown <= 0)//But make sure they're a tile away at least, and our range attack is off cooldown
-				OpenFire(target)
+				if(ammo > 0)
+					OpenFire(target)
 		if(!Process_Spacemove()) // Drifting
 			walk(src,0)
 			return 1
@@ -249,7 +250,6 @@
 /mob/living/simple_animal/hostile/proc/OpenFire(atom/A)
 
 	visible_message("<span class='danger'><b>[src]</b> [ranged_message] at [A]!</span>")
-
 	if(rapid)
 		spawn(1)
 			Shoot(A)
@@ -263,6 +263,7 @@
 	return
 
 /mob/living/simple_animal/hostile/proc/Shoot(atom/targeted_atom)
+	ammo--
 	if(targeted_atom == src.loc)
 		return
 	var/turf/startloc = get_turf(src)

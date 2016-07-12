@@ -1,6 +1,7 @@
 ////WASTELAND LOOT/////////////
 /obj/effect/landmark/wastelandloot
 	name = "wasteland_general"
+	invisibility = 101
 	var/list/poor
 	var/list/common
 	var/list/rare

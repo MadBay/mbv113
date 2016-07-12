@@ -19,6 +19,9 @@
 	w_class = 1
 	slot_flags = SLOT_BELT | SLOT_EARS
 
+/obj/item/weapon/doorkey/New()
+	name = "key([rand(1,1000)])"
+
 /obj/item/weapon/doorkey/attack_self(mob/user)
 	if(usr.stat || !usr.canmove || usr.restrained())
 		return
@@ -43,7 +46,7 @@
 /obj/item/weapon/keyring
 	name = "Keyring"
 	icon = 'icons/obj/stock_parts.dmi'
-	icon_state = "key"
+	icon_state = "keyring"
 	var/keys_n = 1
 	var/list/keys
 /obj/item/weapon/keyring/proc/getnumber()
