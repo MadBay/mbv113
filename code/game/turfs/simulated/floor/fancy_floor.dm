@@ -47,8 +47,8 @@
 	ChangeTurf(/turf/simulated/floor/plating/asteroid)
 
 /turf/simulated/floor/grass/attackby(obj/item/C, mob/user, params)
-	if(..())
-		return
+	//if(..())
+		//return
 	if(istype(C, /obj/item/weapon/shovel))
 		//new /obj/item/weapon/ore/glass(src)
 		//new /obj/item/weapon/ore/glass(src) //Make some sand if you shovel grass

@@ -474,7 +474,7 @@ var/list/slot_equipment_priority = list( \
 	if(timeofdeath)
 		if((world.time-src.timeofdeath)<6000)
 			var/deathtime = world.time-src.timeofdeath
-			src<<"<span class='boldnotice'>You must be dead for 10 minutes for respawn. You only dead for [deathtime/10/60] minutes</span>"
+			src<<"<span class='boldnotice'>You must be dead for 10 minutes for respawn. You only dead for [round(deathtime/10/60)] minutes</span>"
 			return
 	log_game("[usr.name]/[usr.key] used abandon mob.")
 

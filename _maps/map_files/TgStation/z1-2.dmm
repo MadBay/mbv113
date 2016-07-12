@@ -1,0 +1,90 @@
+"a" = (/turf/simulated/floor/plating/asteroid,/area/space)
+"b" = (/turf/indestructible/rock{desc = "You have a strange feeling while looking at this rock."; icon = 'icons/turf/walls/reinforced_wall.dmi'; icon_state = "rock"; name = "Strange rock"},/area/space)
+"c" = (/turf/simulated/wall/wooden{tag = "icon-tr_corner"; icon_state = "tr_corner"},/area/space)
+"d" = (/turf/simulated/wall/wooden{tag = "icon-h_n_corner"; icon_state = "h_n_corner"},/area/space)
+"e" = (/turf/simulated/wall/wooden{tag = "icon-n_corner"; icon_state = "n_corner"},/area/space)
+"f" = (/turf/simulated/wall/wooden{tag = "icon-n_corner_vertical"; icon_state = "n_corner_vertical"},/area/space)
+"g" = (/turf/simulated/floor/plating/asteroid,/obj/machinery/hydroponics/constructable,/turf/simulated/floor/wood_m{tag = "icon-tl_corner"; icon_state = "tl_corner"},/area/maintenance/electrical)
+"h" = (/turf/simulated/floor/plating/asteroid,/obj/machinery/hydroponics/constructable,/turf/simulated/floor/wood_m{tag = "icon-brkn_top"; icon_state = "brkn_top"},/area/maintenance/electrical)
+"i" = (/turf/simulated/floor/plating/asteroid,/obj/machinery/hydroponics/constructable,/turf/simulated/floor/wood_m{tag = "icon-top_side"; icon_state = "top_side"},/area/maintenance/electrical)
+"j" = (/turf/simulated/floor/plating/asteroid,/turf/simulated/floor/wood_m{tag = "icon-top_side"; icon_state = "top_side"},/area/maintenance/electrical)
+"k" = (/turf/simulated/floor/plating/asteroid,/turf/simulated/floor/wood_m{tag = "icon-tr_corner"; icon_state = "tr_corner"},/area/maintenance/electrical)
+"l" = (/turf/simulated/floor/plating/asteroid,/obj/machinery/light/small{dir = 8},/turf/simulated/floor/wood_m{tag = "icon-brkn_left_side_2"; icon_state = "brkn_left_side_2"},/area/maintenance/electrical)
+"m" = (/turf/simulated/floor/wood_m,/area/maintenance/electrical)
+"n" = (/turf/simulated/floor/plating/asteroid,/turf/simulated/floor/wood_m{tag = "icon-default"; icon_state = ""},/area/maintenance/electrical)
+"o" = (/turf/simulated/floor/plating/asteroid,/obj/structure/ladder{height = 11; name = "ladder to cafe"},/obj/machinery/light/small{dir = 4},/turf/simulated/floor/wood_m{tag = "icon-brkn_right_side_2"; icon_state = "brkn_right_side_2"},/area/maintenance/electrical)
+"p" = (/obj/machinery/gravity_generator/main/station/admin{active_power_usage = 0; use_power = 0},/turf/simulated/floor/plating,/area/awaymission)
+"q" = (/turf/simulated/floor/plating/asteroid,/obj/machinery/hydroponics/constructable,/turf/simulated/floor/wood_m{tag = "icon-bl_corner"; icon_state = "bl_corner"},/area/maintenance/electrical)
+"r" = (/turf/simulated/floor/plating/asteroid,/obj/machinery/hydroponics/constructable,/turf/simulated/floor/wood_m{tag = "icon-bot_side"; icon_state = "bot_side"},/area/maintenance/electrical)
+"s" = (/turf/simulated/floor/plating/asteroid,/obj/machinery/hydroponics/constructable,/turf/simulated/floor/wood_m{tag = "icon-brkn_bot"; icon_state = "brkn_bot"},/area/maintenance/electrical)
+"t" = (/turf/simulated/floor/plating/asteroid,/turf/simulated/floor/wood_m{tag = "icon-bot_side"; icon_state = "bot_side"},/area/maintenance/electrical)
+"u" = (/turf/simulated/floor/plating/asteroid,/turf/simulated/floor/wood_m{tag = "icon-br_corner"; icon_state = "br_corner"},/area/maintenance/electrical)
+"v" = (/turf/simulated/wall/wooden{tag = "icon-bl_corner"; icon_state = "bl_corner"},/area/space)
+"w" = (/turf/simulated/wall/wooden{tag = "icon-br_corner"; icon_state = "br_corner"},/area/space)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaabbbbbbbbbbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaabcdeeeeecbbbbbbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaabfghiijkfbbbbbbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaabflmnmmofbbbpbbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaabfqrrstufbbbbbbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaabveeeeeewbbbbbbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaabbbbbbbbbbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+"}

@@ -32,13 +32,13 @@
 			return
 		user << "You failed to install the lock"
 		return
-	if(istype(I,/obj/item/weapon/doorkey) && istype(I,/obj/item/weapon/keyring))
-		var/obj/item/weapon/doorkey/K = I
+	if(istype(I,/obj/item/weapon/doorkey))
+		var/obj/item/weapon/lock/K = I
 		if(!islock)
 			user << "There is no lock installed"
 			return
 		if(locked)
-			if(checkkey(lock_id,K))
+			if(lock_id == K.id)
 				user << "You unlock the door"
 				locked = 0
 				return
@@ -46,7 +46,7 @@
 				user << "There is a wrong key"
 				return
 		if(!locked && density)
-			if(checkkey(lock_id,K))
+			if(lock_id == K.id)
 				user << "You lock the door"
 				locked = 1
 				return
