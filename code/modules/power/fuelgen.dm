@@ -37,6 +37,7 @@
 		if(301 to 500)
 			S = "full"
 	user << "The fuel tank is [S]"
+	user << "It is[anchored? "":"n't"] anchored."
 /obj/machinery/power/port_gen/fuel/attackby(obj/item/O, mob/user, params)
 	if(istype(O,/obj/item/weapon/reagent_containers))
 		var/obj/item/weapon/reagent_containers/C = O

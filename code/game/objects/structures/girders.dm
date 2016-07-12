@@ -305,7 +305,24 @@
 				new remains(loc)
 				qdel(src)
 
-
+/////////////////////////////////////////////woood girder///////////////////////////////////////////////
+/obj/structure/girder/wood
+	name = "wall frame"
+/obj/structure/girder/wood/attackby(obj/item/W, mob/user, params)
+	if(istype(W,/obj/item/stack/sheet/mineral/wood))
+		var/obj/item/stack/sheet/mineral/wood/S = W
+		if(S.get_amount() < 2)
+			user << "<span class='warning'>You need two planks!</span>"
+			return
+		user << "<span class='notice'>You start building wall</span>"
+		if(do_after(user, 20, target = src))
+			if(!src.loc || !S || S.get_amount() < 2)
+				return
+			S.use(2)
+			user << "<span class='notice'>You create a false wall.</span>"
+			var/turf/simulated/wall/wooden/F = new (loc)
+			transfer_fingerprints_to(F)
+			qdel(src)
 //////////////////////////////////////////// cult girder //////////////////////////////////////////////
 
 /obj/structure/cultgirder

@@ -19,6 +19,10 @@
 	w_class = 1
 	slot_flags = SLOT_BELT | SLOT_EARS
 
+/obj/item/weapon/doorkey/New()
+	name = "key([rand(1,1000)])"
+
+
 /obj/item/weapon/doorkey/attack_self(mob/user)
 	if(usr.stat || !usr.canmove || usr.restrained())
 		return

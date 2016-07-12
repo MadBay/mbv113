@@ -5,6 +5,7 @@
 	var/atom/target
 	var/ranged = 0
 	var/rapid = 0
+	var/ammo = 70
 	var/projectiletype	//set ONLY it and NULLIFY casingtype var, if we have ONLY projectile
 	var/projectilesound
 	var/casingtype		//set ONLY it and NULLIFY projectiletype, if we have projectile IN CASING
@@ -163,7 +164,8 @@
 		var/target_distance = get_dist(src,target)
 		if(ranged)//We ranged? Shoot at em
 			if(target_distance >= 2 && ranged_cooldown <= 0)//But make sure they're a tile away at least, and our range attack is off cooldown
-				OpenFire(target)
+				if(ammo > 0)
+					OpenFire(target)
 		if(!Process_Spacemove()) // Drifting
 			walk(src,0)
 			return 1
@@ -263,6 +265,7 @@
 	return
 
 /mob/living/simple_animal/hostile/proc/Shoot(atom/targeted_atom)
+	ammo--
 	if(targeted_atom == src.loc)
 		return
 	var/turf/startloc = get_turf(src)
