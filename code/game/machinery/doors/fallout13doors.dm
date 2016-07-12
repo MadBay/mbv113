@@ -33,7 +33,7 @@
 		user << "You failed to install the lock"
 		return
 	if(istype(I,/obj/item/weapon/doorkey))
-		var/obj/item/weapon/doorkey/K = I
+		var/obj/item/weapon/lock/K = I
 		if(!islock)
 			user << "There is no lock installed"
 			return
