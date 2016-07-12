@@ -107,7 +107,7 @@ var/list/announcement_systems = list()
 	if(!is_operational())
 		return
 
-	/*var/message
+	var/message
 
 	if(message_type == "ARRIVAL" && arrivalToggle)
 		message = CompileText(arrival, user, rank)
@@ -120,7 +120,7 @@ var/list/announcement_systems = list()
 	else
 		for(var/channel in channels)
 			radio.talk_into(src, message, channel, list(SPAN_ROBOT))
-			*/
+
 
 //config stuff
 
