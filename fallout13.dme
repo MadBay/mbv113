@@ -22,6 +22,7 @@
 #include "_maps\map_files\generic\z6.dmm"
 #include "_maps\map_files\generic\z7.dmm"
 #include "_maps\map_files\TgStation\tgstation.2.1.3.dmm"
+#include "_maps\map_files\TgStation\z16.dmm"
 #include "_maps\map_files\TgStation\z8.dmm"
 #include "code\_compile_options.dm"
 #include "code\hub.dm"
