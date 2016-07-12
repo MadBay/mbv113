@@ -89,11 +89,13 @@
 /turf/simulated/wall/invisible
 	icon = 'icons/misc/invisible.dmi'
 
-/turf/simulated/wall/wooden
+/turf/simulated/wall/wooden_m
 	sheet_type = /obj/item/stack/sheet/mineral/wood
-		name = "wooden wall"
+	name = "wooden wall"
+	icon = 'craftable_wooden_wall.dmi'
+	icon_state = "wall"
 
-/turf/simulated/wall/wooden/try_decon(obj/item/weapon/W, mob/user, turf/T)
+/turf/simulated/wall/wooden_m/try_decon(obj/item/weapon/W, mob/user, turf/T)
 	if( istype(W,/obj/item/weapon/crowbar) )
 		user << "You started to pull the nails out of board"
 		playsound(src, 'sound/items/Crowbar.ogg', 100, 1)
@@ -101,7 +103,7 @@
 			user << "<span class='notice'>You remove the outer planks.</span>"
 			dismantle_wall()
 
-/turf/simulated/wall/wooden/dismantle_wall(devastated=0, explode=0)
+/turf/simulated/wall/wooden_m/dismantle_wall(devastated=0, explode=0)
 	var/newgirder = break_wall()
 	transfer_fingerprints_to(newgirder)
 	for(var/obj/O in src.contents) //Eject contents!
@@ -112,7 +114,7 @@
 			O.loc = src
 	ChangeTurf(/turf/simulated/floor/plating/asteroid)
 
-/turf/simulated/wall/wooden/break_wall()
+/turf/simulated/wall/wooden_m/break_wall()
 	builtin_sheet.amount = 2
 	builtin_sheet.loc = src
 	return (new /obj/structure/girder/wood(src))

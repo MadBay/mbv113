@@ -308,6 +308,8 @@
 /////////////////////////////////////////////woood girder///////////////////////////////////////////////
 /obj/structure/girder/wood
 	name = "wall frame"
+	icon = 'craftable_wooden_wall.dmi'
+	icon_state = "wall-1"
 /obj/structure/girder/wood/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/stack/sheet/mineral/wood))
 		var/obj/item/stack/sheet/mineral/wood/S = W
@@ -319,8 +321,8 @@
 			if(!src.loc || !S || S.get_amount() < 2)
 				return
 			S.use(2)
-			user << "<span class='notice'>You create a false wall.</span>"
-			var/turf/simulated/wall/wooden/F = new (loc)
+			user << "<span class='notice'>You create a wall.</span>"
+			var/turf/simulated/wall/wooden_m/F = new (loc)
 			transfer_fingerprints_to(F)
 			qdel(src)
 //////////////////////////////////////////// cult girder //////////////////////////////////////////////
