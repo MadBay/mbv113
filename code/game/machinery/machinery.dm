@@ -99,6 +99,7 @@ Class Procs:
 	verb_yell = "blares"
 	pressure_resistance = 10
 	var/stat = 0
+	var/minINT = 3
 	var/emagged = 0
 	var/use_power = 1
 		//0 = dont run the auto
@@ -258,6 +259,10 @@ Class Procs:
 			return 1
 		else if(prob(H.getBrainLoss()))
 			user << "<span class='warning'>You momentarily forget how to use [src]!</span>"
+			return 1
+		if(H.getspecial("INT")<minINT)
+			visible_message("<span class='danger'>[H] stares cluelessly at [src] and drools.</span>")
+			user << "You dont know hot to use this"
 			return 1
 	if(panel_open)
 		src.add_fingerprint(user)

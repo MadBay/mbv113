@@ -40,7 +40,7 @@
 	..()
 	var/mob/M = src
 	faction |= "\ref[M]"
-
+	maxHealth = (50 + (getspecial("END")*5))
 /mob/living/carbon/human/prepare_data_huds()
 	//Update med hud images...
 	..()

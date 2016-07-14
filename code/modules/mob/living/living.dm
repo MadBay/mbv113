@@ -24,6 +24,8 @@ Sorry Giacom. Please don't be mad :(
 		name = "[name] ([rand(1, 1000)])"
 		real_name = name
 
+/mob/living/proc/getspecial(var/par)
+	return special[uppertext(par)]
 
 /mob/living/Destroy()
 	..()

@@ -62,9 +62,18 @@
 	qdel(src)
 
 /obj/item/projectile/proc/on_hit(atom/target, blocked = 0, hit_zone)
+	var/nrand = 1
+	if(istype(firer,/mob/living))
+		var/mob/living/F = firer
+		nrand = rand(0,F.getspecial("PER")*2)
+
+
 	if(!isliving(target))
 		return 0
 	var/mob/living/L = target
+	if(!nrand)
+		L.visible_message("[firer] misses [L] with a [src]")
+		return
 	if(blocked != 100) // not completely blocked
 		var/organ_hit_text = ""
 		if(L.has_limbs)

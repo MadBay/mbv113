@@ -36,7 +36,18 @@ var/list/preferences_datums = list()
 	var/inquisitive_ghost = 1
 	var/allow_midround_antag = 1
 	var/preferred_map = null
+	///SPECIAL////
+	var/list/special = list(
+	"STR" = 5,\
+	"PER" = 5,\
+	"END" = 5,\
+	"CHR" = 5,\
+	"INT" = 5,\
+	"AGL" = 5,\
+	"LCK" = 5)
 
+	var/specialsum = 35
+	var/specialmax = 42
 	//characte//r preferences
 	var/real_name						//our character's name
 	var/be_random_name = 0				//whether we'll have a random name every round
@@ -146,6 +157,7 @@ var/list/preferences_datums = list()
 
 			dat += "<center><h2>Occupation Choices</h2>"
 			dat += "<a href='?_src_=prefs;preference=job;task=menu'>Set Occupation Preferences</a><br></center>"
+			dat += "<a href='?_src_=prefs;preference=special;task=menu'>Set Special</a><br></center>"
 			dat += "<h2>Identity</h2>"
 			dat += "<table width='100%'><tr><td width='75%' valign='top'>"
 			if(appearance_isbanned(user))
@@ -407,6 +419,45 @@ var/list/preferences_datums = list()
 	var/datum/browser/popup = new(user, "preferences", "<div align='center'>Character Setup</div>", 640, 750)
 	popup.set_content(dat)
 	popup.open(0)
+
+/datum/preferences/proc/raisespecial(var/par)
+	if(!par)
+		return
+	if(special[par] == 10)
+		return
+	if(specialsum == specialmax)
+		return
+	special[par]++
+	specialsum++
+
+/datum/preferences/proc/dropspecial(var/par)
+	if(!par)
+		return
+	if(special[par] == 1)
+		return
+	if(specialsum == 1)
+		return
+	special[par]--
+	specialsum--
+
+/datum/preferences/proc/SetSpecial(mob/user, width = 500, height = 620)
+	var/HTML = "<center>"
+	HTML += "<center><a href='?_src_=prefs;preference=special;task=close'>Done</a></center><br>"
+	HTML += "<center>[specialmax - specialsum] points left</center><br>"
+	HTML += "STR [special["STR"]] <center><a href='?_src_=prefs;preference=special;task=set;spec=STR;val=pls'>+</a><a href='?_src_=prefs;preference=special;task=set;spec=STR;val=min'>-</a></center>"
+	HTML += "PER [special["PER"]] <center><a href='?_src_=prefs;preference=special;task=set;spec=PER;val=pls'>+</a><a href='?_src_=prefs;preference=special;task=set;spec=PER;val=min'>-</a></center>"
+	HTML += "END [special["END"]] <center><a href='?_src_=prefs;preference=special;task=set;spec=END;val=pls'>+</a><a href='?_src_=prefs;preference=special;task=set;spec=END;val=min'>-</a></center>"
+	HTML += "CHR [special["CHR"]] <center><a href='?_src_=prefs;preference=special;task=set;spec=CHR;val=pls'>+</a><a href='?_src_=prefs;preference=special;task=set;spec=CHR;val=min'>-</a></center>"
+	HTML += "INT [special["INT"]] <center><a href='?_src_=prefs;preference=special;task=set;spec=INT;val=pls'>+</a><a href='?_src_=prefs;preference=special;task=set;spec=INT;val=min'>-</a></center>"
+	HTML += "AGL [special["AGL"]] <center><a href='?_src_=prefs;preference=special;task=set;spec=AGL;val=pls'>+</a><a href='?_src_=prefs;preference=special;task=set;spec=AGL;val=min'>-</a></center>"
+	HTML += "LCK [special["LCK"]] <center><a href='?_src_=prefs;preference=special;task=set;spec=LCK;val=pls'>+</a><a href='?_src_=prefs;preference=special;task=set;spec=LCK;val=min'>-</a></center>"
+
+	var/datum/browser/popup = new(user, "mob_occupation", "<div align='center'>S.P.E.C.I.A.L</div>", width, height)
+	popup.set_window_options("can_close=0")
+	popup.set_content(HTML)
+	popup.open(0)
+	return
+
 
 /datum/preferences/proc/SetChoices(mob/user, limit = 17, list/splitJobs = list("Chief Engineer"), widthPerColumn = 295, height = 620)
 	if(!SSjob)	return
@@ -680,7 +731,19 @@ var/list/preferences_datums = list()
 			text += ".</span>"
 			user << text
 		return
-
+	if(href_list["preference"] == "special")
+		switch(href_list["task"])
+			if("close")
+				user << browse(null, "window=mob_occupation")
+				ShowChoices(user)
+			if("set")
+				if(href_list["val"] == "pls")
+					raisespecial(href_list["spec"])
+				else
+					dropspecial(href_list["spec"])
+				SetSpecial(user)
+			else
+				SetSpecial(user)
 	if(href_list["preference"] == "job")
 		switch(href_list["task"])
 			if("close")
@@ -1104,7 +1167,9 @@ var/list/preferences_datums = list()
 
 	character.real_name = real_name
 	character.name = character.real_name
-
+	if(special["CHR"]<5)
+		character.speech_deffect = pick("durr","lisp")///картавость, шепелявость, заикание
+	character.maxHealth = (50+(special["END"]*5))
 	character.gender = gender
 	character.age = age
 
@@ -1118,6 +1183,8 @@ var/list/preferences_datums = list()
 	character.underwear = underwear
 	character.undershirt = undershirt
 	character.socks = socks
+
+	character.special = special
 
 	character.backbag = backbag
 

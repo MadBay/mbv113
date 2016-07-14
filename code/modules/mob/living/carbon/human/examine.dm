@@ -34,6 +34,29 @@
 				t_him = "her"
 
 	msg += "<EM>[src.name]</EM>!\n"
+	if(!skipface)
+		switch(getspecial("CHR"))
+			if(1)
+				msg+="<span class='warning'>[t_He] [t_is] so ugly, you can't look at this\n</span>"
+				user.Stun(5)
+
+				user.visible_message("<span class='danger'>[user] throws up!</span>", \
+						"<span class='userdanger'>[user] throws up!</span>")
+				playsound(user.loc, 'sound/effects/splat.ogg', 50, 1)
+
+				var/turf/location = user.loc
+				if (istype(location, /turf/simulated))
+					location.add_vomit_floor(user, 1)
+				user.nutrition -= 20
+			if(2 to 4)
+				msg+="[t_He] is pretty ugly\n"
+			if(5 to 7)
+				msg+="[t_He] looks normal\n"
+			if(7 to 9)
+				msg+="[t_He] is pretty attractive\n"
+			if(10)
+				msg+="<span class='warning'>[t_He] is so beautiful! Yow are ready to give [t_him] your live\n</span>"
+				user.Stun(5)
 
 	//uniform
 	if(w_uniform && !(slot_w_uniform in obscured))

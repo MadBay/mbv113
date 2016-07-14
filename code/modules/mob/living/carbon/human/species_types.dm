@@ -47,6 +47,16 @@
 		H.faction |= "slime"
 		return 1
 
+
+/datum/species/human/handle_speech(message, mob/living/carbon/human/H)
+	if(H.speech_deffect)
+		switch(H.speech_deffect)
+			if("durr")//картавость
+				message = sanitize_simple(message,repl_chars=list("р"="г","Р"="Г"))
+			if("lisp")//шепелявость
+				message = sanitize_simple(message,repl_chars=list("ш"="ф","Ш"="ф","в"="ф","В"="ф"))
+	return message
+
 //Curiosity killed the cat's wagging tail.
 datum/species/human/spec_death(gibbed, mob/living/carbon/human/H)
 	if(H)
@@ -115,6 +125,15 @@ datum/species/human/spec_death(gibbed, mob/living/carbon/human/H)
 	use_skintones = 0
 	specflags = list(RADIMMUNE)
 	burnmod = 2
+
+/datum/species/ghoul/handle_speech(message, mob/living/carbon/human/H)
+	if(H.speech_deffect)
+		switch(H.speech_deffect)
+			if("durr")//картавость
+				message = sanitize_simple(message,repl_chars=list("р"="г","Р"="Г"))
+			if("lisp")//шепелявость
+				message = sanitize_simple(message,repl_chars=list("ш"="ф","Ш"="ф","в"="ф","В"="ф"))
+	return message
 
 /datum/species/bigmutant
 	name = "Supermutant"

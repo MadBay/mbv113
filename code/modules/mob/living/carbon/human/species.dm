@@ -608,6 +608,20 @@
 	return 0
 
 /datum/species/proc/handle_speech(message, mob/living/carbon/human/H)
+	if(H.speech_deffect)
+		switch(H.speech_deffect)
+			if("durr")//картавость
+				message = replacetext(message,"р","г")
+				message = replacetext(message,"Р","Г")
+			if("lisp")//шепелявость
+				message = replacetext(message,"ш","ф")
+				message = replacetext(message,"в","ф")
+				message = replacetext(message,"Ш","Ф")
+				message = replacetext(message,"В","Ф")
+			if("sluttering")//заикание
+				message = replacetext(message,"д","д-д-д")
+				message = replacetext(message,"б","б-б")
+				message = replacetext(message,"в","в-в-в")
 	return message
 
 //return a list of spans or an empty list
@@ -979,10 +993,11 @@
 				var/atk_verb = M.dna.species.attack_verb
 				if(H.lying)
 					atk_verb = "kick"
-
-				var/damage = rand(0, 9) + M.dna.species.punchmod
-
-				if(!damage)
+				var/ishit = max(rand(0,M.getspecial("AGL")) - rand(0,H.getspecial("AGL")-2),0)
+				var/damage = rand(1, M.getspecial("STR")) + M.dna.species.punchmod
+				/*denug
+				world << "ishit = [ishit], damage = [damage]"*/
+				if(!ishit)
 					playsound(H.loc, M.dna.species.miss_sound, 25, 1, -1)
 					H.visible_message("<span class='warning'>[M] has attempted to [atk_verb] [H]!</span>")
 					return 0
@@ -1015,8 +1030,8 @@
 				if(H.w_uniform)
 					H.w_uniform.add_fingerprint(M)
 				var/obj/item/organ/limb/affecting = H.get_organ(ran_zone(M.zone_sel.selecting))
-				var/randn = rand(1, 100)
-				if(randn <= 25)
+				var/randn = max(rand(0,(H.getspecial("AGL")+H.getspecial("STR"))) - rand(0,(M.getspecial("AGL")+M.getspecial("STR"))),0)*10
+				if(randn <= 41)
 					playsound(H, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 					H.visible_message("<span class='danger'>[M] has pushed [H]!</span>",
 									"<span class='userdanger'>[M] has pushed [H]!</span>")
@@ -1026,7 +1041,7 @@
 
 				var/talked = 0	// BubbleWrap
 
-				if(randn <= 60)
+				if(randn <= 71)
 					//BubbleWrap: Disarming breaks a pull
 					if(H.pulling)
 						H.visible_message("<span class='warning'>[M] has broken [H]'s grip on [H.pulling]!</span>")
@@ -1065,6 +1080,10 @@
 
 /datum/species/proc/spec_attacked_by(obj/item/I, mob/living/user, def_zone, obj/item/organ/limb/affecting, hit_area, intent, obj/item/organ/limb/target_limb, target_area, mob/living/carbon/human/H, dammod)
 	// Allows you to put in item-specific reactions based on species
+	var/ishit = max(rand(0,user.getspecial("AGL")) - rand(0,H.getspecial("AGL")),0)
+	if(!ishit)
+		H.visible_message("<span class='danger'>[user] has missed [H] with [I]!</span>")
+		return 0
 	if(user != H)
 		user.do_attack_animation(H)
 		if(H.check_shields(I.force+dammod, "the [I.name]", I, MELEE_ATTACK, I.armour_penetration))

@@ -1,8 +1,8 @@
 //This is the lowest supported version, anything below this is completely obsolete and the entire savefile will be wiped.
-#define SAVEFILE_VERSION_MIN	8
+#define SAVEFILE_VERSION_MIN	13
 
 //This is the current version, anything below this will attempt to update (if it's not obsolete)
-#define SAVEFILE_VERSION_MAX	12
+#define SAVEFILE_VERSION_MAX	13
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
 	This proc checks if the current directory of the savefile S needs updating
@@ -32,7 +32,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 
 /datum/preferences/proc/update_antagchoices(current_version)
-	if((!islist(be_special) || old_be_special ) && current_version < 12)
+	if((!islist(be_special) || old_be_special ) && current_version < 13)
 		//Archived values of when antag pref defines were a bitfield+fitflags
 		var/B_traitor = 1
 		var/B_operative = 2
@@ -224,7 +224,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["ignoring"]			<< ignoring
 	S["ghost_hud"]			<< ghost_hud
 	S["inquisitive_ghost"]	<< inquisitive_ghost
-
 	return 1
 
 /datum/preferences/proc/load_character(slot)
@@ -305,6 +304,15 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["job_engsec_med"]		>> job_engsec_med
 	S["job_engsec_low"]		>> job_engsec_low
 
+	//special
+	S["STR"]				>> special["STR"]
+	S["PER"]				>> special["PER"]
+	S["END"]				>> special["END"]
+	S["CHR"]				>> special["CHR"]
+	S["INT"]				>> special["INT"]
+	S["AGL"]				>> special["AGL"]
+	S["LCK"]				>> special["LCK"]
+	for(var/spec in special)
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
 		update_character(needs_update)		//needs_update == savefile_version if we need an update (positive integer)
@@ -401,6 +409,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["cyborg_name"]		<< custom_names["cyborg"]
 	S["religion_name"]		<< custom_names["religion"]
 	S["deity_name"]			<< custom_names["deity"]
+	S["STR"]				<< special["STR"]
+	S["PER"]				<< special["PER"]
+	S["END"]				<< special["END"]
+	S["CHR"]				<< special["CHR"]
+	S["INT"]				<< special["INT"]
+	S["AGL"]				<< special["AGL"]
+	S["LCK"]				<< special["LCK"]
 
 	//Jobs
 	S["userandomjob"]		<< userandomjob
