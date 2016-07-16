@@ -9,7 +9,7 @@
 	var/modifystate = 0
 	var/list/ammo_type = list(/obj/item/ammo_casing/energy)
 	var/select = 1 //The state of the select fire switch. Determines from the ammo_type list what kind of shot is fired next.
-	var/can_charge = 1 //Can it be charged in a recharger?
+	var/can_charge = 0 //Can it be charged in a recharger?
 	ammo_x_offset = 2
 	var/shaded_charge = 0 //if this gun uses a stateful charge bar for more detail
 	var/selfcharge = 0
@@ -25,8 +25,6 @@
 	..()
 	if(cell_type)
 		power_supply = new cell_type(src)
-	else
-		power_supply = new(src)
 	power_supply.give(power_supply.maxcharge)
 	var/obj/item/ammo_casing/energy/shot
 	for (var/i = 1, i <= ammo_type.len, i++)
@@ -56,18 +54,44 @@
 		power_supply.give(100)
 		update_icon()
 
-/obj/item/weapon/gun/energy/attack_self(mob/living/user as mob)
-	if(ammo_type.len > 1)
-		select_fire(user)
+/obj/item/weapon/gun/energy/attackby(obj/item/I, mob/user, params)
+	if(istype(I,/obj/item/weapon/stock_parts/cell))
+		if(power_supply)
+			user << "The gun already has power cell"
+			return
+		power_supply = I
+		user.remove_from_mob(I)
+		I.loc = src
 		update_icon()
 
+/obj/item/weapon/gun/energy/attack_self(mob/living/user as mob)
+	if(ammo_type.len > 1 && power_supply)
+		var/A = alert(user, "What do you want to do", "Remove battery or switch type of shot?", "Battery", "Shot")
+		if(A == "Shot")
+			select_fire(user)
+			update_icon()
+		else
+			user.put_in_hands(power_supply)
+			spawn(1)
+				power_supply = 0
+				update_icon()
+	else if(power_supply)
+		user.put_in_hands(power_supply)
+		spawn(1)
+			power_supply = 0
+			update_icon()
+	else if(ammo_type.len > 1)
+		select_fire(user)
+		update_icon()
 /obj/item/weapon/gun/energy/afterattack(atom/target as mob|obj|turf, mob/living/user as mob|obj, params)
 	newshot() //prepare a new shot
 	..()
 
 /obj/item/weapon/gun/energy/can_shoot()
-	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
-	return power_supply.charge >= shot.e_cost
+	if(power_supply)
+		var/obj/item/ammo_casing/energy/shot = ammo_type[select]
+		return power_supply.charge >= shot.e_cost
+	return 0
 
 /obj/item/weapon/gun/energy/newshot()
 	if (!ammo_type || !power_supply)
