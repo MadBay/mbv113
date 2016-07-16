@@ -1099,9 +1099,11 @@ proc/CallMaterialName(ID)
 /obj/machinery/computer/rdconsole/core
 	name = "Core R&D Console"
 	desc = "A console used to interface with R&D tools."
+	minINT = 7
 	id = 1
 
 /obj/machinery/computer/rdconsole/experiment
 	name = "E.X.P.E.R.I-MENTOR R&D Console"
 	desc = "A console used to interface with R&D tools."
+	minINT = 7
 	id = 3

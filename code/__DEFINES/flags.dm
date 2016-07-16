@@ -1,6 +1,9 @@
 /*
 	These defines are specific to the atom/flags bitmask
 */
+#define FARMER_ID 31
+#define SHERIFF_ID 32
+
 #define ALL ~0 //For convenience.
 #define NONE 0
 

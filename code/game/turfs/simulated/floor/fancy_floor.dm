@@ -27,6 +27,35 @@
 		playsound(src, 'sound/items/Screwdriver.ogg', 80, 1)
 		return
 
+
+/turf/simulated/floor/real_grass
+	name = "Grass patch"
+	icon_state = "grass"
+	baseturf = /turf/simulated/floor/plating/asteroid
+	explosion_block = 50
+	floor_tile = /obj/item/stack/tile/grass
+	broken_states = list("sand")
+
+/turf/simulated/floor/real_grass/ex_act()
+	return
+
+/turf/simulated/floor/real_grass/New()
+	..()
+	spawn(1)
+		update_icon()
+
+/turf/simulated/floor/real_grass/Destroy()
+	ChangeTurf(/turf/simulated/floor/plating/asteroid)
+
+/turf/simulated/floor/grass/attackby(obj/item/C, mob/user, params)
+	if(..())
+		return
+	if(istype(C, /obj/item/weapon/shovel))
+		new /obj/item/weapon/ore/glass(src)
+		new /obj/item/weapon/ore/glass(src) //Make some sand if you shovel grass
+		//user << "<span class='notice'>You can't dig the road</span>"
+		make_plating()
+
 /turf/simulated/floor/grass
 	name = "Grass patch"
 	icon_state = "grass"

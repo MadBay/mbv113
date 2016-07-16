@@ -267,3 +267,7 @@
 	name = "Wooden wall"
 	icon = 'icons/turf/walls/w_wall.dmi'
 	icon_state = "main"
+/turf/simulated/wall/concrete
+	name = "cincrete wall"
+	icon = 'icons/turf/concrete.dmi'
+	icon_state = "store0"

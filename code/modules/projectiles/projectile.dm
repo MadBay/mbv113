@@ -65,7 +65,7 @@
 	var/nrand = 1
 	if(istype(firer,/mob/living))
 		var/mob/living/F = firer
-		nrand = rand(0,F.getspecial("PER")*2)
+		nrand = rand(0,(F.getspecial("PER")+F.getspecial("LCK")))
 
 
 	if(!isliving(target))

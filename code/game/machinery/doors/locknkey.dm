@@ -1,3 +1,5 @@
+
+
 /proc/checkkey(var/id,var/obj/item/O)
 	if(istype(O,/obj/item/weapon/doorkey))
 		var/obj/item/weapon/doorkey/K = O

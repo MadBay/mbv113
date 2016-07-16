@@ -41,7 +41,8 @@ var/const/CHAPLAIN			=(1<<10)
 var/const/CLOWN				=(1<<11)
 var/const/MIME				=(1<<12)
 var/const/ASSISTANT			=(1<<13)
-var/const/SCAVENGER         =(1<<14)
+var/const/HEADSCAVENGER     =(1<<14)
+var/const/SCAVENGER         =(1<<15)
 
 
 var/list/assistant_occupations = list(
