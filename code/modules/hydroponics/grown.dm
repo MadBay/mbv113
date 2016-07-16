@@ -415,7 +415,7 @@
 /obj/item/weapon/reagent_containers/food/snacks/grown/apple/poisoned
 	seed = /obj/item/seeds/poisonedappleseed
 	name = "apple"
-	desc = "It's a little piece of Eden."
+	desc = "Looks very suspicios. Better not to eat this"
 	icon_state = "apple"
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/apple/poisoned/add_juice()

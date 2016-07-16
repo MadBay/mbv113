@@ -1,1 +1,7 @@
-/obj/item/weapon/reagent_containers/food/drinks/bottle/vodka
+/obj/item/weapon/storage/firstaid/fire
+/obj/item/weapon/storage/firstaid/toxin
+/obj/item/weapon/storage/firstaid/o2
+/obj/item/weapon/storage/firstaid/brute
+/obj/item/weapon/defibrillator
+/obj/item/weapon/storage/box/syringes
+/obj/item/clothing/gloves/color/latex/nitrile

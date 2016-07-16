@@ -7,3 +7,6 @@
 /obj/item/weapon/cigbutt/cigarbutt
 /obj/item/weapon/cigbutt
 /obj/effect/decal/cleanable/ash
+/obj/item/trash/semki
+/obj/item/weapon/paper
+/obj/item/ammo_casing/a762

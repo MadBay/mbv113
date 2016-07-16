@@ -1,5 +1,6 @@
 /obj/item/trash/can
-/obj/item/stack/medical/gauze/improvised
 /obj/item/trash/can
 /obj/item/trash/can
 /obj/item/trash/can
+/obj/structure/closet/crate/medical
+/obj/item/selfdel

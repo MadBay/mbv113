@@ -1,1 +1,13 @@
-/obj/item/weapon/reagent_containers/food/snacks/kebab
+/obj/item/weapon/storage/firstaid/regular
+/obj/item/weapon/reagent_containers/pill/radaway
+/obj/item/weapon/reagent_containers/pill/charcoal
+/obj/item/weapon/reagent_containers/pill/epinephrine
+/obj/item/weapon/reagent_containers/pill/morphine
+/obj/item/weapon/reagent_containers/pill/patch/styptic
+/obj/item/weapon/reagent_containers/pill/patch/silver_sulf
+/obj/item/stack/medical/ointment
+/obj/item/stack/medical/gauze
+/obj/item/stack/medical/bruise_pack
+/obj/item/weapon/reagent_containers/hypospray/medipen
+/obj/item/weapon/storage/box/gloves
+/obj/item/weapon/storage/box/masks

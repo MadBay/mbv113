@@ -1,1 +1,17 @@
 /obj/item/weapon/reagent_containers/food/drinks/bottle/vodka
+/obj/item/weapon/reagent_containers/food/condiment/pack/hotsause
+/obj/item/weapon/reagent_containers/food/condiment/pack/ketchup
+/obj/item/weapon/reagent_containers/food/snacks/grown/kudzupod
+/obj/item/weapon/reagent_containers/food/snacks/pizza/sassysage
+/obj/item/weapon/reagent_containers/food/snacks/beefnoodle
+/obj/item/weapon/reagent_containers/food/snacks/soup/stew
+/obj/item/weapon/reagent_containers/food/snacks/sugarcookie
+/obj/item/weapon/reagent_containers/food/snacks/baguette
+/obj/item/weapon/reagent_containers/food/snacks/chocolatebar
+/obj/item/weapon/reagent_containers/food/snacks/cookie
+/obj/item/weapon/reagent_containers/food/drinks/bottle/badminka
+/obj/item/weapon/reagent_containers/food/drinks/bottle/rum
+/obj/item/weapon/reagent_containers/food/drinks/bottle/cognas
+/obj/item/weapon/reagent_containers/food/drinks/bottle/kahlua
+/obj/item/weapon/reagent_containers/food/drinks/bottle/teguila
+/obj/item/weapon/reagent_containers/food/drinks/bottle/vermouth

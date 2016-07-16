@@ -10,3 +10,12 @@
 /obj/item/clothing/suit/f13/duster
 /obj/item/clothing/head/welding/fluff/fire
 /obj/item/weapon/storage/pill_bottle/stimulant
+/obj/item/weapon/switchblade
+/obj/structure/reagent_dispensers/fueltank
+/obj/item/device/multitool
+/obj/item/device/instrument/guitar/jc
+/obj/item/weapon/storage/firstaid/toxin
+/obj/item/weapon/defibrillator
+/obj/item/weapon/kitchen/knife/butcher
+/obj/item/weapon/gun/projectile/revolver/mateba
+/obj/item/weapon/lighter/engraved

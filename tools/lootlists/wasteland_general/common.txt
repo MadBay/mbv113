@@ -11,3 +11,8 @@
 /obj/item/weapon/storage/box/matches
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass
 /obj/item/weapon/screwdriver
+/obj/item/device/flashlight/flare/torch
+/obj/item/device/harmonica
+/obj/item/weapon/storage/fancy/cigarettes
+/obj/item/weapon/twohanded/spear
+/obj/item/weapon/lipstick/random

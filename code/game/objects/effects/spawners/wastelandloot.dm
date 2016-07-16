@@ -30,7 +30,7 @@
 		new S(src.loc)
 	qdel(src)
 //////////////////////////////////////////
-/obj/effect/landmark/wastelandweapon
-	name = "weapon"
-/obj/effect/landmark/martfood
+/obj/effect/landmark/wastelandloot/martmed
+	name = "superdupermart_med"
+/obj/effect/landmark/wastelandloot/martfood
 	name = "superdupermart_food"

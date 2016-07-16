@@ -2,3 +2,13 @@
 /obj/item/weapon/reagent_containers/food/snacks/beans
 /obj/item/weapon/reagent_containers/food/snacks/meat/slab/meatproduct
 /obj/item/weapon/reagent_containers/food/snacks/meat/slab/bear
+/obj/item/weapon/reagent_containers/food/drinks/nukacola/radioactive
+/obj/item/weapon/reagent_containers/food/snacks/burger/fivealamar
+/obj/item/weapon/reagent_containers/food/snacks/kebab/human
+/obj/item/weapon/reagent_containers/food/snacks/meat/human
+/obj/item/weapon/reagent_containers/food/snacks/meat/human/mutant
+/obj/item/weapon/reagent_containers/food/snacks/meat/human/mutant/zombie
+/obj/item/weapon/reagent_containers/food/snacks/meat/rawcutlet/plain/human
+/obj/item/weapon/reagent_containers/food/snacks/grown/apple/poisoned
+/obj/item/weapon/reagent_containers/food/condiment/saltshaker
+/obj/item/weapon/reagent_containers/food/condiment/peppermill

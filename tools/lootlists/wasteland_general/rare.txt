@@ -12,3 +12,10 @@
 /obj/item/clothing/glasses/sunglasses
 /obj/item/device/radio
 /obj/item/weapon/kitchen/knife
+/obj/item/clothing/suit/f13/autumn
+/obj/item/weapon/storage/firstaid/regular
+/obj/item/weapon/reagent_containers/food/drinks/nukacola/radioactive
+/obj/item/weapon/reagent_containers/food/drinks/nukacola
+/obj/item/clothing/suit/armor/f13/leatherarmor
+/obj/item/weapon/reagent_containers/food/snacks/soup/mystery
+/obj/item/weapon/lighter/greyscale
