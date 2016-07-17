@@ -51,7 +51,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	var/static_light = 0
 	var/static_environ
 
-	var/has_gravity = 0
+	var/has_gravity = 1
 	var/safe = 0 				//Is the area teleport-safe: no space / radiation / aggresive mobs / other dangers
 
 	var/no_air = null
@@ -93,8 +93,9 @@ var/list/teleportlocs = list()
 
 /area/space
 	icon_state = "space"
-	requires_power = 1
+	requires_power = 0
 	always_unpowered = 1
+	luminosity = 1
 	lighting_use_dynamic = DYNAMIC_LIGHTING_DISABLED
 	power_light = 0
 	power_equip = 0
@@ -102,6 +103,7 @@ var/list/teleportlocs = list()
 	valid_territory = 0
 	ambientsounds = list('sound/ambience/ambispace.ogg','sound/ambience/title2.ogg',)
 	blob_allowed = 0 //Eating up space doesn't count for victory as a blob.
+	has_gravity = 1
 
 /area/space/nearstation
 	icon_state = "space_near"
