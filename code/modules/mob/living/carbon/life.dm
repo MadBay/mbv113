@@ -511,18 +511,23 @@
 /mob/living/carbon/handle_hud_icons_health()
 	if(healths)
 		if (stat != DEAD)
+			var/hstep = maxHealth/5
+			var/step1 = maxHealth-hstep
+			var/step2 = maxHealth-hstep*2
+			var/step3 = maxHealth-hstep*3
+			var/step4 = maxHealth-hstep*4
 			switch(health)
-				if(100 to INFINITY)
+				if(maxHealth to INFINITY)
 					healths.icon_state = "health0"
-				if(80 to 100)
+				if(step1 to maxHealth)
 					healths.icon_state = "health1"
-				if(60 to 80)
+				if(step2 to step1)
 					healths.icon_state = "health2"
-				if(40 to 60)
+				if(step3 to step2)
 					healths.icon_state = "health3"
-				if(20 to 40)
+				if(step4 to step3)
 					healths.icon_state = "health4"
-				if(0 to 20)
+				if(0 to step4)
 					healths.icon_state = "health5"
 				else
 					healths.icon_state = "health6"
