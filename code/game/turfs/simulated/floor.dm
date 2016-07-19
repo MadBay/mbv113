@@ -135,7 +135,7 @@ var/list/icons_to_ignore_at_floor_init = list("damaged1","damaged2","damaged3","
 	burnt = 1
 
 /turf/simulated/floor/proc/make_plating()
-	return ChangeTurf(/turf/simulated/floor/plating)
+	return ChangeTurf(/turf/simulated/floor/plating/concrete)
 
 /turf/simulated/floor/ChangeTurf(turf/simulated/floor/T)
 	if(!istype(src,/turf/simulated/floor)) return ..() //fucking turfs switch the fucking src of the fucking running procs

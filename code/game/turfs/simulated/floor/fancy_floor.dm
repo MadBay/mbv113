@@ -27,6 +27,15 @@
 		playsound(src, 'sound/items/Screwdriver.ogg', 80, 1)
 		return
 
+/turf/simulated/floor/wood_2
+	name = "wooden floor"
+	icon = 'icons/turf/floors3.dmi'
+	icon_state = "wooden_w"
+	floor_tile = /obj/item/stack/sheet/mineral/wood{amount = 2}
+	broken_states = list("wooden_w1", "wooden_w2", "wooden_w3")
+
+/turf/simulated/floor/wood_2/make_plating()
+	return ChangeTurf(/turf/simulated/floor/plating/asteroid)
 
 /turf/simulated/floor/real_grass
 	name = "Grass patch"

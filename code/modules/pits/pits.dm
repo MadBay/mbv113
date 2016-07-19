@@ -44,7 +44,7 @@ obj/dugpit/New(lnk)
 	name = "Wasteland"
 	baseturf = /turf/simulated/floor/plating/asteroid
 	icon = 'icons/turf/floors.dmi'
-	icon_state = "asteroid"
+	icon_state = "wasteland17"
 	icon_plating = "asteroid"
 	explosion_block = 50
 	var/environment_type = "wasteland17"
@@ -124,6 +124,11 @@ obj/dugpit/New(lnk)
 	if(!W || !user)
 		return 0
 	var/digging_speed = 0
+	if(istype(W,/obj/item/stack/sheet/mineral/wood))
+		var/obj/item/stack/sheet/mineral/wood/WD = W
+		if(WD.amount>1)
+			WD.use(2)
+			src.ChangeTurf(/turf/simulated/floor/wood_2)
 	if (istype(W, /obj/item/weapon/shovel))
 		var/obj/item/weapon/shovel/S = W
 		digging_speed = S.digspeed

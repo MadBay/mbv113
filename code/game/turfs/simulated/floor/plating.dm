@@ -1,6 +1,7 @@
 /* In this file:
  *
  * Plating
+ * Concrete
  * Airless
  * Airless plating
  * Engine floor
@@ -67,6 +68,13 @@
 				icon_state = icon_plating
 				burnt = 0
 				broken = 0
+
+/turf/simulated/floor/plating/concrete
+	name = "concrete"
+	icon = 'icons/turf/floors3.dmi'
+	broken_states = list("concretedmg1", "concretedmg2")
+	burnt_states = list("concrete")
+	icon_state = "concrete"
 
 /turf/simulated/floor/plating/airless
 	icon_state = "plating"
