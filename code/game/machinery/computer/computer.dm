@@ -13,6 +13,7 @@
 	var/icon_keyboard = "generic_key"
 	var/icon_screen = "generic"
 
+
 /obj/machinery/computer/New(location, obj/item/weapon/circuitboard/C)
 	..(location)
 	if(C && istype(C))
