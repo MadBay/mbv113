@@ -1,7 +1,7 @@
 
 /obj/machinery/computer/console
 	name = "Console"
-	icon = 'icons/obj/computer.dmi'
+	icon = 'icons/obj/machines/terminal.dmi'
 	icon_state = "terminal"
 	var/pass = null
 	var/myvar = null
