@@ -39,6 +39,13 @@
 	var/commands_types = list(/datum/program/help,/datum/program/log, /datum/program/clear)
 	var/list/commands_d = list()
 
+/obj/machinery/computer/console/update_icon()
+	if(stat & NOPOWER)
+		icon_state = "terminal_off"
+	else if(stat & BROKEN)
+		icon_state = "terminal_broken"
+	else
+		icon_state = "terminal"
 
 /obj/machinery/computer/console/New()
 	for(var/P in commands_types)
