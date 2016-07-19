@@ -1,0 +1,223 @@
+#main{
+	width: 400px;
+	height: 600px;
+	overflow:hidden;
+	background-image: url(html/images/bg.png);
+	font-family: Monofonto;
+	color: #01FD58;
+}
+#special{
+	display: block;
+	height: 50px;
+	width: 360px;
+	font-size: 40px;
+	border: 4px solid #01FD58;
+	text-align: center;
+	margin-left: 15px;
+	position:relative;
+	top: 10px;
+
+}
+#stats{
+	width: 265px;
+	height: 280px;
+	font-size: 25px;
+	margin-left: 30px;
+	margin-top: 30px;
+}
+
+#str, #per, #end, #char, #int, #agi, #luck{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+#plus{
+	width: 15px;
+	height: 25px;
+	border:  1px solid #01FD58;
+	background-color: rgba(0, 0, 0, 0.5);
+	text-align: center;
+	line-height: 25px;
+	display: inline-block;
+	margin: 5px;
+	margin-top: 6px;
+	margin-bottom: 3px;
+}
+#pluses{
+	font-size: 25px;
+	position: relative;
+	top: -290px;
+	left: 300px;
+}
+#desc{
+	position: relative;
+	width: 360px;
+	height: 190px;
+	border: 4px solid #01FD58;
+	background-color: rgba(255, 255, 255, 0.1);
+	top: -250px;
+	left: 15px;
+}
+#strtxt{
+	position: relative;
+	width: 250px;
+	height: 146px;
+	font-size: 18px;
+	margin: 3px;
+	top: -10px;
+	line-height: 27px;
+}
+#strpic{
+	width: 129px;
+	height: 146px;
+	position: relative;
+	top: -140px;
+	left: 275px;
+}
+#strdesc{
+	position: absolute;
+	opacity: 0;
+	top: 390px;
+	left: 30px;
+}
+#pertxt{
+	position: relative;
+	width: 250px;
+	height: 146px;
+	font-size: 18px;
+	margin: 3px;
+	top: -10px;
+	line-height: 27px;
+}
+#perpic{
+	width: 129px;
+	height: 146px;
+	position: relative;
+	top: -140px;
+	left: 250px;
+}
+#perdesc{
+	position: absolute;
+	opacity: 0;
+	top: 390px;
+	left: 30px;
+}
+#endtxt{
+	position: relative;
+	width: 250px;
+	height: 146px;
+	font-size: 18px;
+	margin: 3px;
+	top: -10px;
+	line-height: 27px;
+}
+#endpic{
+	width: 129px;
+	height: 146px;
+	position: relative;
+	top: -140px;
+	left: 245px;
+}
+#enddesc{
+	position: absolute;
+	opacity: 0;
+	top: 390px;
+	left: 30px;
+}
+#chartxt{
+	position: relative;
+	width: 250px;
+	height: 146px;
+	font-size: 18px;
+	margin: 3px;
+	top: -10px;
+	line-height: 27px;
+}
+#charpic{
+	width: 129px;
+	height: 146px;
+	position: relative;
+	top: -140px;
+	left: 260px;
+}
+#chardesc{
+	position: absolute;
+	opacity: 0;
+	top: 390px;
+	left: 30px;
+}
+#inttxt{
+	position: relative;
+	width: 250px;
+	height: 146px;
+	font-size: 18px;
+	margin: 3px;
+	top: -10px;
+	line-height: 27px;
+}
+#intpic{
+	width: 129px;
+	height: 146px;
+	position: relative;
+	top: -130px;
+	left: 260px;
+}
+#intdesc{
+	position: absolute;
+	opacity: 0;
+	top: 390px;
+	left: 30px;
+}
+#left{
+	position: relative;
+	left: 240px;
+	top: 170px;
+}
+#plus:hover{
+  background-color: rgba(91, 253, 103, 0.3);
+  transition: 0.2s;
+}
+#str:hover + #strdesc{
+	opacity: 1;
+	transition: 0.2s;
+}
+#per:hover + #perdesc{
+	opacity: 1;
+	transition: 0.2s;
+}
+#end:hover + #enddesc{
+	opacity: 1;
+	transition: 0.2s;
+}
+#char:hover + #chardesc{
+	opacity: 1;
+	transition: 0.2s;
+}
+#int:hover + #intdesc{
+	opacity: 1;
+	transition: 0.2s;
+}
+#str:hover{
+	color: black;
+	background-color: #01FD58;
+	transition: 0.2s;
+}
+#per:hover{
+	color: black;
+	background-color: #01FD58;
+	transition: 0.2s;
+}
+#end:hover{
+	color: black;
+	background-color: #01FD58;
+	transition: 0.2s;
+}
+#char:hover{
+	color: black;
+	background-color: #01FD58;
+	transition: 0.2s;
+}
+#int:hover{
+	color: black;
+	background-color: #01FD58;
+	transition: 0.2s;
+}

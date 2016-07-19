@@ -157,7 +157,7 @@ var/list/preferences_datums = list()
 
 			dat += "<center><h2>Occupation Choices</h2>"
 			dat += "<a href='?_src_=prefs;preference=job;task=menu'>Set Occupation Preferences</a><br></center>"
-			dat += "<a href='?_src_=prefs;preference=special;task=menu'>Set Special</a><br></center>"
+			dat += "<center><a href='?_src_=prefs;preference=special;task=menu'>Set Special</a><br></center>"
 			dat += "<h2>Identity</h2>"
 			dat += "<table width='100%'><tr><td width='75%' valign='top'>"
 			if(appearance_isbanned(user))
@@ -440,21 +440,70 @@ var/list/preferences_datums = list()
 	special[par]--
 	specialsum--
 
-/datum/preferences/proc/SetSpecial(mob/user, width = 500, height = 620)
-	var/HTML = "<center>"
-	HTML += "<center><a href='?_src_=prefs;preference=special;task=close'>Done</a></center><br>"
-	HTML += "<center>[specialmax - specialsum] points left</center><br>"
-	HTML += "STR [special["STR"]] <center><a href='?_src_=prefs;preference=special;task=set;spec=STR;val=pls'>+</a><a href='?_src_=prefs;preference=special;task=set;spec=STR;val=min'>-</a></center>"
-	HTML += "PER [special["PER"]] <center><a href='?_src_=prefs;preference=special;task=set;spec=PER;val=pls'>+</a><a href='?_src_=prefs;preference=special;task=set;spec=PER;val=min'>-</a></center>"
-	HTML += "END [special["END"]] <center><a href='?_src_=prefs;preference=special;task=set;spec=END;val=pls'>+</a><a href='?_src_=prefs;preference=special;task=set;spec=END;val=min'>-</a></center>"
-	HTML += "CHR [special["CHR"]] <center><a href='?_src_=prefs;preference=special;task=set;spec=CHR;val=pls'>+</a><a href='?_src_=prefs;preference=special;task=set;spec=CHR;val=min'>-</a></center>"
-	HTML += "INT [special["INT"]] <center><a href='?_src_=prefs;preference=special;task=set;spec=INT;val=pls'>+</a><a href='?_src_=prefs;preference=special;task=set;spec=INT;val=min'>-</a></center>"
-	HTML += "AGL [special["AGL"]] <center><a href='?_src_=prefs;preference=special;task=set;spec=AGL;val=pls'>+</a><a href='?_src_=prefs;preference=special;task=set;spec=AGL;val=min'>-</a></center>"
-	HTML += "LCK [special["LCK"]] <center><a href='?_src_=prefs;preference=special;task=set;spec=LCK;val=pls'>+</a><a href='?_src_=prefs;preference=special;task=set;spec=LCK;val=min'>-</a></center>"
+/datum/preferences/proc/SetSpecial(mob/user, width = 420, height = 620)
+	var/htmlpic='html/images/bg.png'
+	user << browse_rsc(htmlpic,'html/images/bg.png')
+	user << browse_rsc('html/images/end.png')
+	user << browse_rsc('html/images/int.png')
+	user << browse_rsc('html/images/char.png')
+	user << browse_rsc('html/images/str.png')
+	user << browse_rsc('html/images/per.png')
+	user << browse_rsc('html/images/agi.png')
+	user << browse_rsc('html/images/luck.png')
+	var/HTML = {"
+	<body>
+	<style>body{background-image:url('bg.png');}</style>
+	<div id = "main">
+		<div id = 'special', >
+		S.P.E.C.I.A.L
+		</div>
+		<div id = 'stats'>
+		<div id = 'str'>Strength</div>
+		<div id = 'strdesc'><div id = 'strtxt'><p>When you have big muscles and strong punches, nobody will risk to stay on your way. Strength defines how much damage would you deal with melee weapons.</p></div><div id = 'strpic'><img src = 'str.png'></div></div>
+		<div id = 'per'>Perception</div>
+		<div id = 'perdesc'><div id = 'pertxt'><p>Your ability to sense outward things. You will meet numerous danger on wasteland and your perception will help you to avoid it.</p></div><div id = 'perpic'><img src = 'per.png'></div></div>
+		<div id = 'end'>Endurance</div>
+		<div id = 'enddesc'><div id = 'endtxt'><p>Importance of endurance consists of ability to go through more damage.</p></div><div id = 'endpic'><img src = 'end.png'></div></div>
+		<div id = 'char'>Charisma</div>
+		<div id = 'chardesc'><div id = 'chartxt'>Charming characters are natural leaders. They can encourage you in fight. Their speeches pleasing your ears and you want to listen them forever.<p></p></div><div id = 'charpic'><img src = 'char.png'></div></div>
+		<div id = 'int'>Intelligence</div>
+		<div id = 'intdesc'><div id = 'inttxt'><p></p>Intelligence is a measure of your overall mental acuity. Represents your brain ability to understand world around you.</p></div><div id = 'intpic'><img src = 'int.png'></div></div>
+		<div id = 'agi'>Agility</div>
+        <div id = 'agidesc'><div id = 'agitxt'><p></p>Agility is your ability to move fast and quiet. It affects on your shooting and stealth skills.</p></div><div id = 'agipic'><img src = 'agi.png'></div></div>
+		<div id = 'luck'>Luck</div>
+        <div id = 'luckdesc'><div id = 'lucktxt'><p></p>Lucky one!</p></div><div id = 'luckpic'><img src = 'luck.png'></div></div>
+		</div>
+		<div id = 'pluses'>
+			<a href='?_src_=prefs;preference=special;task=set;spec=STR;val=pls'><div id = 'plus'>+</div></a>[special["STR"]]<a href='?_src_=prefs;preference=special;task=set;spec=STR;val=min'><div id = 'plus'>-</div></a>
+			<br>
+			<a href='?_src_=prefs;preference=special;task=set;spec=PER;val=pls'><div id = 'plus'>+</div></a>[special["PER"]]<a href='?_src_=prefs;preference=special;task=set;spec=PER;val=min'><div id = 'plus'>-</div></a>
+			<br>
+			<a href='?_src_=prefs;preference=special;task=set;spec=END;val=pls'><div id = 'plus'>+</div></a>[special["END"]]<a href='?_src_=prefs;preference=special;task=set;spec=END;val=min'><div id = 'plus'>-</div></a>
+			<br>
+			<a href='?_src_=prefs;preference=special;task=set;spec=CHR;val=pls'><div id = 'plus'>+</div></a>[special["CHR"]]<a href='?_src_=prefs;preference=special;task=set;spec=CHR;val=min'><div id = 'plus'>-</div></a>
+			<br>
+			<a href='?_src_=prefs;preference=special;task=set;spec=INT;val=pls'><div id = 'plus'>+</div></a>[special["INT"]]<a href='?_src_=prefs;preference=special;task=set;spec=INT;val=min'><div id = 'plus'>-</div></a>
+			<br>
+			<a href='?_src_=prefs;preference=special;task=set;spec=AGL;val=pls'><div id = 'plus'>+</div></a>[special["AGL"]]<a href='?_src_=prefs;preference=special;task=set;spec=AGL;val=min'><div id = 'plus'>-</div></a>
+			<br>
+			<a href='?_src_=prefs;preference=special;task=set;spec=LCK;val=pls'><div id = 'plus'>+</div></a>[special["LCK"]]<a href='?_src_=prefs;preference=special;task=set;spec=LCK;val=min'><div id = 'plus'>-</div></a>
+		</div>
+		<div id = 'desc'>
+		<div id = 'left'>Points left: [specialmax - specialsum]</div>
+		</div>
+	</div>
+</body>
 
+	"}
+
+
+
+
+	user << browse(null, "window=preferences")
 	var/datum/browser/popup = new(user, "mob_occupation", "<div align='center'>S.P.E.C.I.A.L</div>", width, height)
-	popup.set_window_options("can_close=0")
 	popup.set_content(HTML)
+	popup.set_window_options("can_minimize=0;can_maximize=0;can_resize=0;can_close=1")
+	popup.add_stylesheet("stylish", 'html/browser/stylesheet.css')
 	popup.open(0)
 	return
 
@@ -744,6 +793,7 @@ var/list/preferences_datums = list()
 				SetSpecial(user)
 			else
 				SetSpecial(user)
+		return 1
 	if(href_list["preference"] == "job")
 		switch(href_list["task"])
 			if("close")

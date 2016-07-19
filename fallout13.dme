@@ -13,6 +13,7 @@
 #define FILE_DIR "code/modules/html_interface/cards"
 #define FILE_DIR "code/modules/html_interface/nanotrasen"
 #define FILE_DIR "html"
+#define FILE_DIR "html/images"
 #define FILE_DIR "icons"
 #define FILE_DIR "icons/ass"
 #define FILE_DIR "icons/effects"
