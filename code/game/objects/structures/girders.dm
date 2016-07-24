@@ -308,7 +308,7 @@
 /////////////////////////////////////////////woood girder///////////////////////////////////////////////
 /obj/structure/girder/wood
 	name = "wall frame"
-	icon = 'craftable_wooden_wall.dmi'
+	icon = 'icons/turf/walls/craftable_wooden_wall.dmi'
 	icon_state = "wall-1"
 /obj/structure/girder/wood/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/stack/sheet/mineral/wood))
