@@ -1,8 +1,40 @@
+@font-face {
+	font-family: 'Monofonto';
+	src: url('Monofonto-Regular.eot');
+	src: local('Monofonto-Regular'),
+		url('fonts/Monofonto-Regular.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Monofonto-Regular.woff') format('woff'),
+		url('fonts/Monofonto-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Overseer';
+	src: url('Overseer-Italic.eot');
+	src: local('Overseer Italic'), local('Overseer-Italic'),
+		url('fonts/Overseer-Italic.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Overseer-Italic.woff') format('woff'),
+		url('fonts/Overseer-Italic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Overseer';
+	src: url('Overseer.eot');
+	src: local('Overseer'),
+		url('fonts/Overseer.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Overseer.woff') format('woff'),
+		url('fonts/Overseer.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
 #main{
 	width: 400px;
 	height: 600px;
-	overflow:hidden;
-	background-image: url(html/images/bg.png);
+	background-image: url(images/bg.png);
 	font-family: Monofonto;
 	color: #01FD58;
 }
@@ -16,7 +48,7 @@
 	margin-left: 15px;
 	position:relative;
 	top: 10px;
-
+	line-height: 50px;
 }
 #stats{
 	width: 265px;
@@ -27,8 +59,8 @@
 }
 
 #str, #per, #end, #char, #int, #agi, #luck{
-	margin-top: 5px;
-	margin-bottom: 5px;
+	margin-top: 15px;
+	margin-bottom: 16px;
 }
 #plus{
 	width: 15px;
@@ -70,13 +102,13 @@
 	width: 129px;
 	height: 146px;
 	position: relative;
-	top: -140px;
-	left: 275px;
+	top: -160px;
+	left: 265px;
 }
 #strdesc{
 	position: absolute;
 	opacity: 0;
-	top: 390px;
+	top: 420px;
 	left: 30px;
 }
 #pertxt{
@@ -92,13 +124,13 @@
 	width: 129px;
 	height: 146px;
 	position: relative;
-	top: -140px;
-	left: 250px;
+	top: -160px;
+	left: 240px;
 }
 #perdesc{
 	position: absolute;
 	opacity: 0;
-	top: 390px;
+	top: 420px;
 	left: 30px;
 }
 #endtxt{
@@ -114,13 +146,13 @@
 	width: 129px;
 	height: 146px;
 	position: relative;
-	top: -140px;
-	left: 245px;
+	top: -160px;
+	left: 235px;
 }
 #enddesc{
 	position: absolute;
 	opacity: 0;
-	top: 390px;
+	top: 420px;
 	left: 30px;
 }
 #chartxt{
@@ -137,12 +169,12 @@
 	height: 146px;
 	position: relative;
 	top: -140px;
-	left: 260px;
+	left: 250px;
 }
 #chardesc{
 	position: absolute;
 	opacity: 0;
-	top: 390px;
+	top: 420px;
 	left: 30px;
 }
 #inttxt{
@@ -158,15 +190,60 @@
 	width: 129px;
 	height: 146px;
 	position: relative;
-	top: -130px;
-	left: 260px;
+	top: -140px;
+	left: 250px;
 }
 #intdesc{
 	position: absolute;
 	opacity: 0;
-	top: 390px;
+	top: 420px;
 	left: 30px;
 }
+#agitxt{
+	position: relative;
+	width: 250px;
+	height: 146px;
+	font-size: 18px;
+	margin: 3px;
+	top: -10px;
+	line-height: 27px;
+}
+#agidesc{
+	position: absolute;
+	opacity: 0;
+	top: 420px;
+	left: 30px;
+}
+#agipic{
+	width: 102px;
+	height: 102px;
+	position: relative;
+	top: -160px;
+	left: 210px;
+}
+#luckdesc{
+	position: absolute;
+	opacity: 0;
+	top: 420px;
+	left: 30px;
+}
+#lucktxt{
+	position: relative;
+	width: 250px;
+	height: 146px;
+	font-size: 34xpx;
+	margin: 3px;
+	top: -10px;
+	line-height: 27px;
+}
+#luckpic{
+	width: 129px;
+	height: 146px;
+	position: relative;
+	top: -175px;
+	left: 220px;
+}
+
 #left{
 	position: relative;
 	left: 240px;
@@ -196,6 +273,14 @@
 	opacity: 1;
 	transition: 0.2s;
 }
+#agi:hover + #agidesc{
+	opacity: 1;
+	transition: 0.2s;
+}
+#luck:hover + #luckdesc{
+	opacity: 1;
+	transition: 0.2s;
+}
 #str:hover{
 	color: black;
 	background-color: #01FD58;
@@ -217,6 +302,16 @@
 	transition: 0.2s;
 }
 #int:hover{
+	color: black;
+	background-color: #01FD58;
+	transition: 0.2s;
+}
+#agi:hover{
+	color: black;
+	background-color: #01FD58;
+	transition: 0.2s;
+}
+#luck:hover{
 	color: black;
 	background-color: #01FD58;
 	transition: 0.2s;
