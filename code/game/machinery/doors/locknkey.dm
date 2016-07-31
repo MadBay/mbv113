@@ -6,9 +6,10 @@
 		if(id == K.id)
 			return 1
 		return 0
+
 	if(istype(O,/obj/item/weapon/keyring))
 		var/obj/item/weapon/keyring/K = O
-		for(var/obj/item/weapon/doorkey/DK in K)
+		for(var/obj/item/weapon/doorkey/DK in K.keys)
 			if(id == DK.id)
 				return 1
 	return 0
@@ -52,11 +53,13 @@
 	icon_state = "keyring"
 	var/keys_n = 1
 	var/list/keys
+
 /obj/item/weapon/keyring/proc/getnumber()
 	var/number = 0
 	for(var/obj/item/weapon/doorkey/K1 in keys)
 		number++
 	return number
+
 /obj/item/weapon/keyring/attack_self(mob/user)
 	var/obj/item/weapon/doorkey/K = input(user, "Select a key","Keys", null) as obj in keys
 	if(K)
@@ -66,6 +69,7 @@
 	keys_n = getnumber()
 	if(keys_n < 1)
 		qdel(src)
+
 /obj/item/weapon/keyring/attackby(obj/item/I, mob/user, params)
 	if(istype(I,/obj/item/weapon/doorkey))
 		var/obj/item/weapon/doorkey/K1 = I
@@ -73,6 +77,7 @@
 		user.remove_from_mob(K1)
 		K1.loc = null
 		keys_n = getnumber()
+
 /obj/item/weapon/lock
 	name = "lock"
 	icon = 'icons/obj/stock_parts.dmi'
