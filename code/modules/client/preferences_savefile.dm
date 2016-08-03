@@ -312,7 +312,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["INT"]				>> special["INT"]
 	S["AGL"]				>> special["AGL"]
 	S["LCK"]				>> special["LCK"]
-	for(var/spec in special)
+	specialsum = 0
+	for(var/I in special)
+		specialsum+=I
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
 		update_character(needs_update)		//needs_update == savefile_version if we need an update (positive integer)

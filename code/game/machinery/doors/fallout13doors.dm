@@ -32,28 +32,16 @@
 			return
 		user << "You failed to install the lock"
 		return
-	//TODO переписать это говно
 	if(istype(I,/obj/item/weapon/doorkey) || istype(I,/obj/item/weapon/keyring))
 		var/obj/item/weapon/doorkey/K = I
 		if(!islock)
 			user << "There is no lock installed"
 			return
-		if(locked)
-			if(checkkey(lock_id,K))
-				user << "You unlock the door"
-				locked = 0
-				return
-			else
-				user << "There is a wrong key"
-				return
-		if(!locked && density)
-			if(checkkey(lock_id,K))
-				user << "You lock the door"
-				locked = 1
-				return
-			else
-				user << "There is a wrong key"
-				return
+		if(checkkey(lock_id,K))
+			locked = !locked
+			user << "You [locked ? "un":""]lock the door"
+			return
+		user << "This is a wrong key"
 	if(!locked)
 		if (density)
 			icon_state = "[icon_state]open"

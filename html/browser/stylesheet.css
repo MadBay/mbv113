@@ -30,6 +30,9 @@
 	font-weight: normal;
 	font-style: normal;
 }
+body{
+	owerflow:hidden;
+}
 
 #main{
 	width: 400px;
